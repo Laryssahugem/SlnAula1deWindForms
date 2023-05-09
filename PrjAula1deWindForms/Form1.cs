@@ -29,16 +29,39 @@ namespace PrjAula1deWindForms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //  código quando o botao logar for clicado// 
-            if (txtLogin.Text == "12345678901" && txtSenha.Text == "123456")
+            //  código quando o botao logar for clicado 
+            //string.Empty -> string vazia
+            string mensagem;
+            if (txtLogin.TextLength < 11 || txtLogin.Text == String.Empty)
             {
-                lblMensagem.Text = "Usuário autentificado!";
+                mensagem = "Preecha a caixa login com um valor válido!";
+            }
+            else if (txtSenha.TextLength < 6 || txtSenha.Text == String.Empty)
+            {
+                mensagem = "Preecha a caixa senha com um valor válido!";
             }
             else
             {
-                lblMensagem.Text = "Usuário autentificado!";
+                if (txtLogin.Text != "12345678901")
+                {
+                    mensagem = "Login inválido!";
+                }
+                else if (txtSenha.Text != "123456")
+                {
+                    mensagem = "Senha inválida!";
+                }
+                else
+                {
+                    mensagem = "Usuário autentificado!";
+                }
             }
-        } 
+
+            // lblMensagem.Text = mensagem; //mensagem em um label
+           
+            
+            MessageBox.Show(mensagem, "Aviso!",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+
+        }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {

@@ -88,9 +88,8 @@
             lblMensagem.ForeColor = SystemColors.ControlText;
             lblMensagem.Location = new Point(109, 376);
             lblMensagem.Name = "lblMensagem";
-            lblMensagem.Size = new Size(156, 47);
+            lblMensagem.Size = new Size(0, 47);
             lblMensagem.TabIndex = 8;
-            lblMensagem.Text = "Mensagem";
             // 
             // txtSenha
             // 
